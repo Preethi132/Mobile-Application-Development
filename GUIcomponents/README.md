@@ -242,6 +242,10 @@ ch = 1;
 
 ## OUTPUT
 
+![P24](https://github.com/Preethi132/Mobile-Application-Development/assets/136288465/cf898be3-7cc1-470e-8fec-6aeeb5284201)
+![P21](https://github.com/Preethi132/Mobile-Application-Development/assets/136288465/796cccd9-d0cc-42ca-9d23-44745cf8727c)
+![P22](https://github.com/Preethi132/Mobile-Application-Development/assets/136288465/29657530-e444-46ae-a3d5-87942e6e042d)
+![P23](https://github.com/Preethi132/Mobile-Application-Development/assets/136288465/a5beae50-fbbb-4300-9fde-d184e541695b)
 
 
 
