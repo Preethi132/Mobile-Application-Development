@@ -28,12 +28,138 @@ Step 7: Save and run the application.
 ```
 /*
 Program to print the text “calculator operation”.
-Developed by:
-Registeration Number :
+Developed by: PREETHI S
+Registeration Number : 212221040132
 */
 ```
+activity_main:
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" android:layout_height="match_parent"
+tools:context=".MainActivity" android:orientation="vertical">
+<ImageView
+android:id="@+id/imageView" android:layout_width="match_parent" android:layout_height="111dp" android:layout_marginTop="25dp" app:srcCompat="@drawable/img" />
+<EditText
+android:id="@+id/txt1" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="20dp" android:layout_marginTop="20dp" android:layout_marginRight="20dp" android:ems="10" android:hint="First Number" android:inputType="numberDecimal"
+tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+<EditText
+android:id="@+id/txt2" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="20dp" android:layout_marginTop="20dp" android:layout_marginRight="20dp" android:ems="10" android:hint="Second
+Number" android:inputType="numberDecimal"
+tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+<Button
+android:id="@+id/btnadd" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="20dp" android:layout_marginTop="20dp" android:layout_marginRight="20dp" android:text="Add" />
+<Button
+android:id="@+id/btnsubs" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="20dp" android:layout_marginTop="20dp" android:layout_marginRight="20dp" android:text="Subtract" />
+<Button
+android:id="@+id/btndiv" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="20dp" android:layout_marginTop="20dp" android:layout_marginRight="20dp" android:text="Divide" />
+<Button
+android:id="@+id/btnmult" android:layout_width="match_parent"
+android:layout_height="wrap_content" android:layout_marginLeft="20dp" android:layout_marginTop="20dp" android:layout_marginRight="20dp" android:text="Multiply" />
+<TextView
+android:id="@+id/result" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="20dp" android:layout_marginTop="25dp" android:layout_marginRight="20dp" />
+</LinearLayout>
+MainActivity.java:
+package com.example.calculator;
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle; import
+android.view.View; import
+android.widget.Button; import
+android.widget.EditText; import
+android.widget.TextView;import
+android.widget.Toast;
+public class MainActivity extends AppCompatActivity
+{Button btnadd,btnsubs,btnmult,btndiv;
+EditText txt1,txt2;
+TextView result;
+@Override
+protected void onCreate(Bundle savedInstanceState)
+{super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main);
+btnadd=findViewById(R.id.btnadd);
+btnsubs=findViewById(R.id.btnsubs);
+btndiv=findViewById(R.id.btndiv);
+btnmult=findViewById(R.id.btnmult);
+txt1=findViewById(R.id.txt1);txt2=findViewById(R.id.txt2);
+result=findViewById(R.id.result);
+btnadd.setOnClickListener(new View.OnClickListener() {
+@Override
+public void onClick(View view) {
+if (txt1.getText().toString().equals(""))
+{ Toast.makeText(MainActivity.this, "Please Enter Number", Toast.LENGTH_SHORT).show();
+} else if (txt2.getText().toString().equals(""))
+{ Toast.makeText(MainActivity.this, "Please Enter Number", Toast.LENGTH_SHORT).show();
+}
+else {
+float a, b, c;
+a = Float.parseFloat(txt1.getText().toString());b =
+Float.parseFloat(txt2.getText().toString());
+c = a + b; // Using Third Variable To Store Output Value
+result.setText("The Addition Result Is " + c);
+}
+}
+});
+btnsubs.setOnClickListener(new View.OnClickListener()
+{@Override
+public void onClick(View view) {
+if (txt1.getText().toString().equals(""))
+{ Toast.makeText(MainActivity.this, "Please Enter Number", Toast.LENGTH_SHORT).show();
+} else if (txt2.getText().toString().equals(""))
+{ Toast.makeText(MainActivity.this, "Please Enter Number", Toast.LENGTH_SHORT).show();
+}
+else {
+float a, b, c;
+a = Float.parseFloat(txt1.getText().toString());b =
+Float.parseFloat(txt2.getText().toString());
+c = a - b; // Using Third Variable To Store Output Value
+result.setText("The Subtraction Result Is " + c);
+}
+}
+});
+btnmult.setOnClickListener(new View.OnClickListener()
+{@Override
+public void onClick(View view) {
+if (txt1.getText().toString().equals(""))
+{ Toast.makeText(MainActivity.this, "Please Enter Number", Toast.LENGTH_SHORT).show();
+} else if (txt2.getText().toString().equals("")) {
+Toast.makeText(MainActivity.this, "Please Enter Number", Toast.LENGTH_SHORT).show();
+}
+else {
+float a, b, c;
+a = Float.parseFloat(txt1.getText().toString());b =
+Float.parseFloat(txt2.getText().toString());
+c = a*b; // Using Third Variable To Store Output Value
+result.setText("The Multiplication Result Is " + c);
+}
+}
+});
+btndiv.setOnClickListener(new View.OnClickListener()
+{@Override
+public void onClick(View view) {
+// Checking Input First Is Blank Or Not if
+(txt1.getText().toString().equals("")) {
+// Showing Toast (Message)
+Toast.makeText(MainActivity.this, "Please Enter Number", Toast.LENGTH_SHORT).show();
+} else if (txt2.getText().toString().equals(""))
+{ Toast.makeText(MainActivity.this, "Please Enter Number", Toast.LENGTH_SHORT).show();
+}
+else {
+float a, b, c;
+a = Float.parseFloat(txt1.getText().toString());b =
+Float.parseFloat(txt2.getText().toString());
+c = a/b; // Using Third Variable To Store Output Value
+result.setText("The Division Result Is " + c);
+}
+}
+});
+}
+}
+
 
 ## OUTPUT
+
+![image](https://github.com/Preethi132/Mobile-Application-Development/assets/136288465/8ec523ff-dfa7-4943-b5d4-b3f115d97914)
+![image](https://github.com/Preethi132/Mobile-Application-Development/assets/136288465/d2dcdd55-d7ce-4256-8544-fdc946b663f4)
+![image](https://github.com/Preethi132/Mobile-Application-Development/assets/136288465/05065e82-1838-41ed-8082-b470d9195927)
+![image](https://github.com/Preethi132/Mobile-Application-Development/assets/136288465/7954ceed-d807-4f20-8d30-2c517922cd75)
 
 
 
